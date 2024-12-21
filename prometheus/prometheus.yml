@@ -1,0 +1,45 @@
+global:
+  scrape_interval:     15s 
+  evaluation_interval: 15s
+
+scrape_configs:
+  - job_name: 'systemd_exporter'
+    scrape_interval: 15s
+    static_configs:
+      - targets: 
+        - 'rmo-pk2-dev-2:9558'
+        - 'server-db-dev-2:9558'
+        - 'upnki-01-dev-2:9558'
+        - 'rmo-processing-dev-2:9558'
+        - 'bsn1-dev-2:9558'
+        - 'bsn2-dev-2:9558'
+        - 'upnki-02-dev-2:9558'
+        - 'rmo-pk1-dev-2:9558'
+        - 'lib-builder-dev-2:9558'
+        - 'management-server-dev-2:9558'
+
+  - job_name: 'node_exporter'
+    scrape_interval: 15s
+    static_configs:
+      - targets:
+        - 'rmo-pk2-dev-2:9100'
+        - 'server-db-dev-2:9100'
+        - 'upnki-01-dev-2:9100'
+        - 'rmo-processing-dev-2:9100'
+        - 'bsn1-dev-2:9100'
+        - 'bsn2-dev-2:9100'
+        - 'upnki-02-dev-2:9100'
+        - 'rmo-pk1-dev-2:9100'
+        - 'lib-builder-dev-2:9100'
+        - 'management-server-dev-2:9100'
+
+        #- '172.31.7.16:9100'
+        #- '172.31.7.3:9100'
+        #- '172.31.7.6:9100'
+        #- '172.31.7.13:9100'
+        #- '172.31.7.8:9100'
+        #- '172.31.7.9:9100'
+        #- '172.31.7.7:9100'
+        #- '172.31.7.15:9100'
+        #- '172.31.7.18:9100'
+        #- '172.31.7.4:9100'

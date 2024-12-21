@@ -1,0 +1,36 @@
+volumes:
+  grafana_data:
+  prometheus_data:
+
+
+services:
+
+  prometheus:
+    image: bitnami/prometheus
+    volumes:
+      - prometheus_data:/prometheus
+      - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /etc/hosts:/etc/hosts
+    ports:
+      - "9090:9090"
+
+  loki:
+    image: grafana/loki
+    volumes:
+      - ./loki/config.yml:/etc/loki/config.yml
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/loki/config.yml
+
+  grafana:
+    image: grafana/grafana
+    depends_on:
+      - prometheus
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./grafana/grafana.ini:/etc/grafana/grafana.ini
+      - ./grafana/provisioning:/etc/grafana/provisioning
+      - ./grafana/dashboards:/etc/grafana/dashboards
+      - /etc/hosts:/etc/hosts
+    ports:
+      - "3000:3000"
