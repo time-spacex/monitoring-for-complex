@@ -1,0 +1,174 @@
+# /etc/sql_exporter/psql.collector.yml
+
+collector_name: psql_custom
+
+metrics:
+  - metric_name: "postgres_oldest_transaction"
+    type: gauge
+    help: "Oldest transaction in PostgreSQL."
+    values: [oldest_transaction_seconds]
+    query: |
+      SELECT EXTRACT(EPOCH FROM MAX(NOW() - xact_start)) AS oldest_transaction_seconds
+      FROM pg_stat_activity
+      WHERE xact_start IS NOT NULL;
+
+  - metric_name: "postgres_oldest_query"
+    type: gauge 
+    help: "Oldest query in PostgreSQL."
+    values: [oldest_query_seconds] 
+    query: |
+      SELECT EXTRACT(EPOCH FROM MAX(NOW() - query_start)) AS oldest_query_seconds
+      FROM pg_stat_activity
+      WHERE query_start IS NOT NULL;
+
+  - metric_name: "postgres_oldest_session"
+    type: gauge 
+    help: "Oldest session in PostgreSQL."
+    values: [oldest_session_seconds] 
+    query: |
+      SELECT EXTRACT(EPOCH FROM MAX(NOW() - backend_start)) AS oldest_session_seconds
+      FROM pg_stat_activity
+      WHERE query_start IS NOT NULL;
+
+  - metric_name: "postgres_active_sessions_total"
+    type: gauge
+    help: "Total number of active sessions in PostgreSQL."
+    values: [active_sessions]
+    query: |
+      SELECT COUNT(*) AS active_sessions
+      FROM pg_stat_activity;
+
+  - metric_name: "postgres_sessions_by_client_address"
+    type: gauge
+    help: "Number of PostgreSQL sessions grouped by client IP address."
+    key_labels: [client_address]
+    values: [session_count]
+    query: |
+      SELECT COUNT(*) AS session_count, 
+             COALESCE(client_addr::TEXT, 'unknown') AS client_address
+      FROM pg_stat_activity
+      GROUP BY client_addr;
+
+  - metric_name: "postgres_sessions_by_client_name"
+    type: gauge
+    help: "Number of PostgreSQL sessions grouped by client name."
+    key_labels: [client_name]
+    values: [session_count]
+    query: |
+      SELECT COUNT(*) AS session_count, 
+             COALESCE(usename::TEXT, 'unknown') AS client_name
+      FROM pg_stat_activity
+      GROUP BY usename;
+
+  - metric_name: "postgres_transactions_total"
+    type: gauge
+    help: "Total number of transactions (committed + rolled back) per database in PostgreSQL."
+    key_labels: [database_name]
+    values: [transaction_count]
+    query: |
+      SELECT datname AS database_name,
+             xact_commit + xact_rollback AS transaction_count
+      FROM pg_stat_database
+      ORDER BY transaction_count DESC;
+
+  - metric_name: "postgres_session_issues"
+    type: gauge
+    help: "PostgreSQL session statistics (sessions, abandoned, fatal, killed) per database."
+    key_labels: [database_name, issue_type]
+    values: [issue_count]
+    query: |
+      SELECT datname AS database_name, 
+             'sessions' AS issue_type, 
+             sessions AS issue_count
+      FROM pg_stat_database
+      WHERE sessions > 0 AND datname = 'krtmrd'
+      UNION ALL
+      SELECT datname AS database_name, 
+             'sessions_abandoned' AS issue_type, 
+             sessions_abandoned AS issue_count
+      FROM pg_stat_database
+      WHERE sessions > 0 AND datname = 'krtmrd'
+      UNION ALL
+      SELECT datname AS database_name, 
+             'sessions_fatal' AS issue_type, 
+             sessions_fatal AS issue_count
+      FROM pg_stat_database
+      WHERE sessions > 0 AND datname = 'krtmrd'
+      UNION ALL
+      SELECT datname AS database_name, 
+             'sessions_killed' AS issue_type, 
+             sessions_killed AS issue_count
+      FROM pg_stat_database
+      WHERE sessions > 0 AND datname = 'krtmrd';
+
+  - metric_name: "postgres_session_statuses"
+    type: gauge
+    help: "PostgreSQL session statuses for client backends."
+    key_labels: [session_status]
+    values: [session_count]
+    query: |
+      SELECT state AS session_status, 
+             count(*) AS session_count
+      FROM pg_stat_activity
+      WHERE backend_type = 'client backend'
+      GROUP BY state
+      ORDER BY session_count DESC;
+
+  - metric_name: "postgres_session_activity"
+    type: gauge
+    help: "PostgreSQL session activity (waiting events) for client backends."
+    key_labels: [waiting_event]
+    values: [session_count]
+    query: |
+      SELECT 
+        wait_event_type || '.' || wait_event AS waiting_event, 
+        count(*) AS session_count
+      FROM pg_stat_activity
+      WHERE wait_event_type IS NOT NULL 
+        AND backend_type = 'client backend'
+      GROUP BY wait_event_type, wait_event
+      ORDER BY session_count DESC;
+
+  - metric_name: "postgres_session_waiting_states"
+    type: gauge
+    help: "PostgreSQL session states, modified for waiting events, for client backends."
+    key_labels: [session_state]
+    values: [session_count]
+    query: |
+      SELECT 
+        CASE 
+          WHEN wait_event_type = 'Lock' THEN 'waiting' 
+          ELSE state 
+        END AS session_state, 
+        count(*) AS session_count
+      FROM pg_stat_activity
+      WHERE backend_type = 'client backend'
+      GROUP BY session_state
+      ORDER BY session_count DESC;
+
+  - metric_name: "postgres_deadlocks"
+    type: gauge
+    help: "PostgreSQL deadlocks count for database 'krtmrd'."
+    values: [deadlock_count]
+    query: |
+      SELECT deadlocks AS deadlock_count
+      FROM pg_stat_database
+      WHERE datname = 'krtmrd';
+
+  - metric_name: "postgres_wait_metrics"
+    type: gauge
+    help: "PostgreSQL wait metrics for client backends."
+    key_labels: []
+    value_label: "metric"
+    values: [wait_count, max_wait_age, total_wait_age]
+    query: |
+      WITH q AS (
+        SELECT clock_timestamp() - l.waitstart AS wait_age
+        FROM pg_stat_activity a, pg_locks l
+        WHERE a.pid = l.pid AND NOT l.granted
+      )
+      SELECT
+        count(*)::float AS wait_count,
+        coalesce(EXTRACT(EPOCH FROM max(wait_age)), 0.0) AS max_wait_age,
+        coalesce(EXTRACT(EPOCH FROM sum(wait_age)), 0.0) AS total_wait_age
+      FROM q;

@@ -37,3 +37,8 @@ scrape_configs:
     scrape_interval: 15s
     static_configs:
       - targets: ['server-db-dev-2:9187']
+
+  - job_name: 'sql_exporter'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['server-db-dev-2:9399']
