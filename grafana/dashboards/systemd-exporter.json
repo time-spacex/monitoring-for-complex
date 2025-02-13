@@ -2596,7 +2596,7 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "Systemd Exporter",
+  "title": "Состояние виртуальных машин комплекса",
   "uid": "ae7apm8rhe5fkb",
   "version": 28,
   "weekStart": ""
