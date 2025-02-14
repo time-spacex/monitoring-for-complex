@@ -19,7 +19,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 2,
+  "id": 4,
   "links": [],
   "panels": [
     {
@@ -102,12 +102,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"rmo-pk1-dev-2:9558\", state=\"active\", name=\"rmo-pk1.service\"}",
+          "expr": "systemd_unit_state{job=\"$job\", instance=~\"rmo-pk1.*\", state=\"active\", name=\"rmo-pk1.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -199,12 +199,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
           "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"guidance-conveyor.service\", instance=\"management-server-dev-2:9558\", state=\"active\"}",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"guidance-conveyor.service\", instance=~\"management-server.*\", state=\"active\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -283,12 +283,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"rf-commutator.service\", instance=\"management-server-dev-2:9558\", state=\"active\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"rf-commutator.service\", instance=~\"management-server.*\", state=\"active\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -367,12 +367,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"TasksStarterProcessor.service\", instance=\"management-server-dev-2:9558\", state=\"active\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"TasksStarterProcessor.service\", instance=~\"management-server.*\", state=\"active\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -451,12 +451,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"guidanceControl.service\", instance=\"management-server-dev-2:9558\", state=\"active\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"guidanceControl.service\", instance=~\"management-server.*\", state=\"active\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -548,12 +548,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-01-dev-2:9558\", state=\"active\", name=\"upnki_01_controller.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-01.*\", state=\"active\", name=\"upnki_01_controller.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -632,12 +632,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-01-dev-2:9558\", state=\"active\", name=\"ac_receiver.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-01.*\", state=\"active\", name=\"ac_receiver.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -716,12 +716,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-01-dev-2:9558\", state=\"active\", name=\"fft.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-01.*\", state=\"active\", name=\"fft.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -800,12 +800,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-01-dev-2:9558\", state=\"active\", name=\"signalEstimation.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-01.*\", state=\"active\", name=\"signalEstimation.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -884,12 +884,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-01-dev-2:9558\", state=\"active\", name=\"signalsNKICalculation.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-01.*\", state=\"active\", name=\"signalsNKICalculation.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -968,12 +968,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-01-dev-2:9558\", state=\"active\", name=\"ddz_recorder.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-01.*\", state=\"active\", name=\"ddz_recorder.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1066,12 +1066,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-02-dev-2:9558\", state=\"active\", name=\"ac_receiver_L.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-02.*\", state=\"active\", name=\"ac_receiver_L.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1150,12 +1150,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-02-dev-2:9558\", state=\"active\", name=\"ac_receiver_S.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-02.*\", state=\"active\", name=\"ac_receiver_S.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1234,12 +1234,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-02-dev-2:9558\", state=\"active\", name=\"ac_receiver_X.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-02.*\", state=\"active\", name=\"ac_receiver_X.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1318,12 +1318,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-02-dev-2:9558\", state=\"active\", name=\"fft_L.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-02.*\", state=\"active\", name=\"fft_L.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1402,12 +1402,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-02-dev-2:9558\", state=\"active\", name=\"fft_S.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-02.*\", state=\"active\", name=\"fft_S.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1486,12 +1486,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-02-dev-2:9558\", state=\"active\", name=\"fft_X.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-02.*\", state=\"active\", name=\"fft_X.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1570,12 +1570,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-02-dev-2:9558\", state=\"active\", name=\"spectrumSignalDetection_L.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-02.*\", state=\"active\", name=\"spectrumSignalDetection_L.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1654,12 +1654,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-02-dev-2:9558\", state=\"active\", name=\"spectrumSignalDetection_S.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-02.*\", state=\"active\", name=\"spectrumSignalDetection_S.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1738,12 +1738,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-02-dev-2:9558\", state=\"active\", name=\"spectrumSignalDetection_X.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-02.*\", state=\"active\", name=\"spectrumSignalDetection_X.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1822,12 +1822,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-02-dev-2:9558\", state=\"active\", name=\"ddz_recorder_L.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-02.*\", state=\"active\", name=\"ddz_recorder_L.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1906,12 +1906,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-02-dev-2:9558\", state=\"active\", name=\"ddz_recorder_S.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-02.*\", state=\"active\", name=\"ddz_recorder_S.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -1990,12 +1990,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-02-dev-2:9558\", state=\"active\", name=\"ddz_recorder_X.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-02.*\", state=\"active\", name=\"ddz_recorder_X.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2074,12 +2074,12 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=\"upnki-02-dev-2:9558\", state=\"active\", name=\"bandSignalsDetection.service\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", instance=~\"upnki-02.*\", state=\"active\", name=\"bandSignalsDetection.service\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2171,7 +2171,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "datasource": {
@@ -2179,8 +2179,8 @@
             "uid": "PBFA97CFB590B2093"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"TrajectoryPrediction.service\", state=\"active\", instance=\"bsn1-dev-2:9558\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=~\"TrajectoryPrediction.service\", state=\"active\", instance=~\"bsn1.*\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2259,7 +2259,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "datasource": {
@@ -2267,8 +2267,8 @@
             "uid": "PBFA97CFB590B2093"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"DR.service\", state=\"active\", instance=\"bsn1-dev-2:9558\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"DR.service\", state=\"active\", instance=~\"bsn1.*\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2347,7 +2347,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "datasource": {
@@ -2355,8 +2355,8 @@
             "uid": "PBFA97CFB590B2093"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"emuSDR.service\", state=\"active\", instance=\"bsn1-dev-2:9558\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"emuSDR.service\", state=\"active\", instance=~\"bsn1.*\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2435,7 +2435,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "datasource": {
@@ -2443,8 +2443,8 @@
             "uid": "PBFA97CFB590B2093"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"emitatorOPU.service\", state=\"active\", instance=\"bsn1-dev-2:9558\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"emitatorOPU.service\", state=\"active\", instance=~\"bsn1.*\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2523,7 +2523,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.4.0",
+      "pluginVersion": "11.5.1",
       "targets": [
         {
           "datasource": {
@@ -2531,8 +2531,8 @@
             "uid": "PBFA97CFB590B2093"
           },
           "disableTextWrap": false,
-          "editorMode": "builder",
-          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"OPY_Control.service\", state=\"active\", instance=\"bsn1-dev-2:9558\"}",
+          "editorMode": "code",
+          "expr": "systemd_unit_state{job=\"systemd_exporter\", name=\"OPY_Control.service\", state=\"active\", instance=~\"bsn1.*\", contour=\"$contour\"}",
           "fullMetaSearch": false,
           "includeNullMetadata": true,
           "legendFormat": "__auto",
@@ -2587,6 +2587,24 @@
         "regex": "",
         "sort": 1,
         "type": "query"
+      },
+      {
+        "current": {
+          "text": "PROD",
+          "value": "PROD"
+        },
+        "definition": "label_values(contour)",
+        "label": "Contour",
+        "name": "contour",
+        "options": [],
+        "query": {
+          "qryType": 1,
+          "query": "label_values(contour)",
+          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        },
+        "refresh": 1,
+        "regex": "",
+        "type": "query"
       }
     ]
   },
@@ -2596,8 +2614,8 @@
   },
   "timepicker": {},
   "timezone": "browser",
-  "title": "Состояние виртуальных машин комплекса",
+  "title": "Состояние микросервисов комплекса",
   "uid": "ae7apm8rhe5fkb",
-  "version": 28,
+  "version": 7,
   "weekStart": ""
 }

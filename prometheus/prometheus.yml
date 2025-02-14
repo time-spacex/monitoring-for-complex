@@ -3,6 +3,9 @@ global:
   evaluation_interval: 15s
 
 scrape_configs:
+
+# SYSTEMD-EXPORTER
+
   - job_name: 'systemd_exporter'
     scrape_interval: 15s
     static_configs:
@@ -17,6 +20,39 @@ scrape_configs:
         - 'rmo-pk1-dev-2:9558'
         - 'lib-builder-dev-2:9558'
         - 'management-server-dev-2:9558'
+        labels:
+          contour: 'DEV 2'
+        
+      - targets:
+        - 'rmo-pk2-prePROD:9558'
+        - 'server-db-prePROD:9558'
+        - 'upnki-01-prePROD:9558'
+        - 'rmo-processing-prePROD:9558'
+        - 'bsn1-prePROD:9558'
+        - 'bsn2-prePROD:9558'
+        - 'upnki-02-prePROD:9558'
+        - 'rmo-pk1-prePROD:9558'
+        - 'lib-builder-prePROD:9558'
+        - 'management-server-prePROD:9558'
+        labels:
+          contour: 'prePROD'
+
+      - targets:
+        - 'upnki-01-prod:9558'
+        - 'upnki-02-prod:9558'
+        - 'server-db-prod:9558'
+        - 'management-server-prod:9558'
+        - 'storage-server-prod:9558'
+        - 'bsn3-prod:9558'
+        - 'bsn1-prod:9558'
+        - 'bsn2-prod:9558'
+        - 'rmo-processing-prod:9558'
+        - 'rmo-pk1-prod:9558'
+        - 'rmo-pk2-prod:9558'
+        labels:
+          contour: 'PROD'
+
+# NODE-EXPORTER
 
   - job_name: 'node_exporter'
     scrape_interval: 15s
@@ -32,6 +68,38 @@ scrape_configs:
         - 'rmo-pk1-dev-2:9100'
         - 'lib-builder-dev-2:9100'
         - 'management-server-dev-2:9100'
+        labels:
+          contour: 'DEV 2'
+      
+      - targets:
+        - 'rmo-pk2-prePROD:9100'
+        - 'server-db-prePROD:9100'
+        - 'upnki-01-prePROD:9100'
+        - 'rmo-processing-prePROD:9100'
+        - 'bsn1-prePROD:9100'
+        - 'bsn2-prePROD:9100'
+        - 'upnki-02-prePROD:9100'
+        - 'rmo-pk1-prePROD:9100'
+        - 'lib-builder-prePROD:9100'
+        - 'management-server-prePROD:9100'
+        labels:
+          contour: 'prePROD'
+
+      - targets:
+        - 'upnki-01-prod:9100'
+        - 'upnki-02-prod:9100'
+        - 'server-db-prod:9100'
+        - 'management-server-prod:9100'
+        - 'storage-server-prod:9100'
+        - 'bsn3-prod:9100'
+        - 'bsn1-prod:9100'
+        - 'bsn2-prod:9100'
+        - 'rmo-processing-prod:9100'
+        - 'rmo-pk1-prod:9100'
+        - 'rmo-pk2-prod:9100'
+        labels:
+          contour: 'PROD'
+
 
   - job_name: 'postgres_exporter'
     scrape_interval: 15s
