@@ -25,8 +25,10 @@ query_range:
         enabled: true
         max_size_mb: 100
 
-#limits_config:
+limits_config:
 #  metric_aggregation_enabled: true
+  ingestion_rate_mb: 8
+  ingestion_burst_size_mb: 12
 
 schema_config:
   configs:
