@@ -4463,13 +4463,13 @@
     ]
   },
   "time": {
-    "from": "now-1m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "",
   "title": "PostgreSQL DB Dashboard",
   "uid": "000000039",
-  "version": 3,
+  "version": 4,
   "weekStart": ""
 }

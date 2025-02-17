@@ -1340,7 +1340,9 @@
   "preload": false,
   "refresh": "10s",
   "schemaVersion": 40,
-  "tags": [],
+  "tags": [
+    "microservice"
+  ],
   "templating": {
     "list": [
       {
@@ -1377,6 +1379,6 @@
   "timezone": "browser",
   "title": "ЛОГИ ВСЕХ МИКРОСЕРВИСОВ",
   "uid": "deak69rnbhp1cc",
-  "version": 11,
+  "version": 13,
   "weekStart": ""
 }

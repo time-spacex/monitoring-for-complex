@@ -2539,7 +2539,9 @@
   "preload": false,
   "refresh": "5s",
   "schemaVersion": 40,
-  "tags": [],
+  "tags": [
+    "microservice"
+  ],
   "templating": {
     "list": [
       {
@@ -2607,6 +2609,6 @@
   "timezone": "browser",
   "title": "Состояние микросервисов комплекса",
   "uid": "ae7apm8rhe5fkb",
-  "version": 9,
+  "version": 11,
   "weekStart": ""
 }
