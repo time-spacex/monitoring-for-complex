@@ -1,5 +1,7 @@
-# FUKKEN WORKS !!! LOOOOL 
-
+# This minimal config scrape only single log file.
+# Primarily used in rpm/deb packaging where promtail service can be started during system init process.
+# And too much scraping during init process can overload the complete system.
+# https://github.com/grafana/loki/issues/11398
 server:
   http_listen_port: 9080
   grpc_listen_port: 0
@@ -8,7 +10,8 @@ positions:
   filename: /tmp/positions.yaml
 
 clients:
-  - url: http://localhost:3100/loki/api/v1/push
+  - url: http://172.31.7.20:3100/loki/api/v1/push
+  - url: http://172.18.70.114:3100/loki/api/v1/push
 
 scrape_configs:
 - job_name: journal
@@ -22,3 +25,7 @@ scrape_configs:
     - source_labels:
       - __journal__hostname
       target_label: nodename
+    - source_labels: ['__journal__hostname']
+      target_label: 'contour'
+      replacement: 'DEV 2'
+      action: replace

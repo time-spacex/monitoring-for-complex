@@ -1,1301 +1,1382 @@
 {
-    "annotations": {
-      "list": [
-        {
-          "builtIn": 1,
-          "datasource": {
-            "type": "grafana",
-            "uid": "-- Grafana --"
-          },
-          "enable": true,
-          "hide": true,
-          "iconColor": "rgba(0, 211, 255, 1)",
-          "name": "Annotations & Alerts",
-          "type": "dashboard"
-        }
-      ]
-    },
-    "editable": true,
-    "fiscalYearStartMonth": 0,
-    "graphTooltip": 0,
-    "id": 5,
-    "links": [],
-    "panels": [
+  "annotations": {
+    "list": [
       {
-        "collapsed": true,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 0
+        "builtIn": 1,
+        "datasource": {
+          "type": "grafana",
+          "uid": "-- Grafana --"
         },
-        "id": 2,
-        "panels": [
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 14,
-              "w": 24,
-              "x": 0,
-              "y": 1
-            },
-            "id": 1,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"management-server-dev-2\", unit=\"guidance-conveyor.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "0 Запускатель конвейера",
-            "type": "logs"
-          }
-        ],
-        "title": "СЕРВЕР УПРАВЛЕНИЯ - КОНВЕЙЕР",
-        "type": "row"
-      },
-      {
-        "collapsed": true,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 1
-        },
-        "id": 18,
-        "panels": [
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 0,
-              "y": 232
-            },
-            "id": 3,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"management-server-dev-2\", unit=\"guidanceControl.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "7 Управление сопровождением",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 12,
-              "y": 232
-            },
-            "id": 4,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"management-server-dev-2\", unit=\"TasksStarterProcessor.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": " 6 Запускатель и контроль",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 7,
-              "w": 12,
-              "x": 0,
-              "y": 240
-            },
-            "id": 5,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": true,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"management-server-dev-2\", unit=\"rf-commutator.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": " 17 Управление ВЧ-коммутатором",
-            "type": "logs"
-          }
-        ],
-        "title": "СЕРВЕР УПРАВЛЕНИЯ",
-        "type": "row"
-      },
-      {
-        "collapsed": true,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 2
-        },
-        "id": 25,
-        "panels": [
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 14,
-              "w": 24,
-              "x": 0,
-              "y": 326
-            },
-            "id": 26,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"rmo-pk1-dev-2\", unit=\"rmo-pk1.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": " РМО ПК",
-            "type": "logs"
-          }
-        ],
-        "title": "РМО ПК-1",
-        "type": "row"
-      },
-      {
-        "collapsed": true,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 3
-        },
-        "id": 6,
-        "panels": [
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 0,
-              "y": 4
-            },
-            "id": 7,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-01-dev-2\", unit=\"ac_receiver.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "16 Управление УПНКИ-01",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 12,
-              "y": 4
-            },
-            "id": 8,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{unit=\"ac_receiver.service\", nodename=\"upnki-01-dev-2\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "13 Захват сигнала с АЦП",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 0,
-              "y": 12
-            },
-            "id": 9,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-01-dev-2\", unit=\"fft.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "11 Формирование блоков спектра",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 12,
-              "y": 12
-            },
-            "id": 10,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-01-dev-2\", unit=\"ddz_recorder.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "14 Запись ДДЗ",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 0,
-              "y": 20
-            },
-            "id": 11,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-01-dev-2\", unit=\"signalEstimation.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "18 Управление оценкой параметров сигналов",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 12,
-              "y": 20
-            },
-            "id": 12,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-01-dev-2\", unit=\"signalsNKICalculation.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "19. Расчет параметров оцениваемого сигнала",
-            "type": "logs"
-          }
-        ],
-        "title": "Сервер УПНКИ-01",
-        "type": "row"
-      },
-      {
-        "collapsed": true,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 4
-        },
-        "id": 17,
-        "panels": [
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 0,
-              "y": 29
-            },
-            "id": 19,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-02-dev-2\", unit=\"ac_receiver_L.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "13 Захват сигнала с АЦП",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 12,
-              "y": 29
-            },
-            "id": 20,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-02-dev-2\", unit=\"ac_receiver_S.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "13 Захват сигнала с АЦП",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 0,
-              "y": 37
-            },
-            "id": 21,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-02-dev-2\", unit=\"ac_receiver_X.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "13 Захват сигнала с АЦП",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 12,
-              "y": 37
-            },
-            "id": 22,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-02-dev-2\", unit=\"fft_L.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "11 Формирование блоков спектра",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 0,
-              "y": 45
-            },
-            "id": 23,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-02-dev-2\", unit=\"fft_S.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "11 Формирование блоков спектра",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 12,
-              "y": 45
-            },
-            "id": 24,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-02-dev-2\", unit=\"fft_X.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "11 Формирование блоков спектра",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 0,
-              "y": 53
-            },
-            "id": 27,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-02-dev-2\", unit=\"spectrumSignalDetection_L.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "12 Выделение сигналов в спектре",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 12,
-              "y": 53
-            },
-            "id": 28,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-02-dev-2\", unit=\"spectrumSignalDetection_S.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "12 Выделение сигналов в спектре",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 0,
-              "y": 61
-            },
-            "id": 29,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-02-dev-2\", unit=\"spectrumSignalDetection_X.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "12 Выделение сигналов в спектре",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 12,
-              "y": 61
-            },
-            "id": 30,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-02-dev-2\", unit=\"ddz_recorder_L.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "14 Запись ДДЗ",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 0,
-              "y": 69
-            },
-            "id": 31,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-02-dev-2\", unit=\"ddz_recorder_S.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "14 Запись ДДЗ",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 12,
-              "y": 69
-            },
-            "id": 32,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"upnki-02-dev-2\", unit=\"ddz_recorder_X.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "14 Запись ДДЗ",
-            "type": "logs"
-          }
-        ],
-        "title": "СЕРВЕР УПНКИ-02",
-        "type": "row"
-      },
-      {
-        "collapsed": true,
-        "gridPos": {
-          "h": 1,
-          "w": 24,
-          "x": 0,
-          "y": 5
-        },
-        "id": 14,
-        "panels": [
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 0,
-              "y": 102
-            },
-            "id": 33,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"bsn1-dev-2\", unit=\"DR.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "8 Формирование ЦУ сопровождения",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 12,
-              "y": 102
-            },
-            "id": 34,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"bsn1-dev-2\", unit=\"emuSDR.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": " 9 Имитатор РПУ сопровождения",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 0,
-              "y": 110
-            },
-            "id": 35,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"bsn1-dev-2\", unit=\"emitatorOPU.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "4 Имитатор ОПУ",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 12,
-              "y": 110
-            },
-            "id": 36,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"bsn1-dev-2\", unit=\"OPY_Control.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "3 Управление ОПУ",
-            "type": "logs"
-          },
-          {
-            "datasource": {
-              "type": "loki",
-              "uid": "P8E80F9AEF21F6940"
-            },
-            "fieldConfig": {
-              "defaults": {},
-              "overrides": []
-            },
-            "gridPos": {
-              "h": 8,
-              "w": 12,
-              "x": 0,
-              "y": 118
-            },
-            "id": 37,
-            "options": {
-              "dedupStrategy": "none",
-              "enableLogDetails": false,
-              "prettifyLogMessage": false,
-              "showCommonLabels": false,
-              "showLabels": false,
-              "showTime": false,
-              "sortOrder": "Descending",
-              "wrapLogMessage": false
-            },
-            "pluginVersion": "11.4.0",
-            "targets": [
-              {
-                "datasource": {
-                  "type": "loki",
-                  "uid": "P8E80F9AEF21F6940"
-                },
-                "editorMode": "builder",
-                "expr": "{nodename=\"bsn1-dev-2\", unit=\"TrajectoryPrediction.service\"} |= ``",
-                "queryType": "range",
-                "refId": "A"
-              }
-            ],
-            "title": "2 ЦУ задачи",
-            "type": "logs"
-          }
-        ],
-        "title": "Сервер БСН-01",
-        "type": "row"
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "type": "dashboard"
       }
-    ],
-    "preload": false,
-    "schemaVersion": 40,
-    "tags": [],
-    "templating": {
-      "list": []
+    ]
+  },
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "graphTooltip": 0,
+  "id": 1,
+  "links": [],
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 2,
+      "panels": [],
+      "title": "СЕРВЕР УПРАВЛЕНИЯ - КОНВЕЙЕР",
+      "type": "row"
     },
-    "time": {
-      "from": "now-6h",
-      "to": "now"
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "P8E80F9AEF21F6940"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 14,
+        "w": 24,
+        "x": 0,
+        "y": 1
+      },
+      "id": 1,
+      "options": {
+        "dedupStrategy": "none",
+        "enableInfiniteScrolling": false,
+        "enableLogDetails": false,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": false,
+        "showTime": false,
+        "sortOrder": "Descending",
+        "wrapLogMessage": false
+      },
+      "pluginVersion": "11.5.1",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "direction": "backward",
+          "editorMode": "code",
+          "expr": "{nodename=~\"management-server.*\", unit=\"guidance-conveyor.service\", contour=\"$contour\"} |= ``",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "0 Запускатель конвейера",
+      "type": "logs"
     },
-    "timepicker": {},
-    "timezone": "browser",
-    "title": "ЛОГИ DEV 2",
-    "uid": "deak69rnbhp1cc",
-    "version": 33,
-    "weekStart": ""
-  }
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 15
+      },
+      "id": 18,
+      "panels": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 16
+          },
+          "id": 3,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"management-server.*\", unit=\"guidanceControl.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "7 Управление сопровождением",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 16
+          },
+          "id": 4,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"management-server.*\", unit=\"TasksStarterProcessor.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": " 6 Запускатель и контроль",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 7,
+            "w": 12,
+            "x": 0,
+            "y": 498
+          },
+          "id": 5,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": true,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"management-server.*\", unit=\"rf-commutator.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": " 17 Управление ВЧ-коммутатором",
+          "type": "logs"
+        }
+      ],
+      "title": "СЕРВЕР УПРАВЛЕНИЯ",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 16
+      },
+      "id": 25,
+      "panels": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 14,
+            "w": 24,
+            "x": 0,
+            "y": 17
+          },
+          "id": 26,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"rmo-pk1.*\", unit=\"rmo-pk1.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": " РМО ПК",
+          "type": "logs"
+        }
+      ],
+      "title": "РМО ПК-1",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 17
+      },
+      "id": 6,
+      "panels": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 18
+          },
+          "id": 7,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-01.*\", unit=\"ac_receiver.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "16 Управление УПНКИ-01",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 18
+          },
+          "id": 8,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{unit=\"ac_receiver.service\", nodename=~\"upnki-01.*\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "13 Захват сигнала с АЦП",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 26
+          },
+          "id": 9,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-01.*\", unit=\"fft.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "11 Формирование блоков спектра",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 26
+          },
+          "id": 10,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-01.*\", unit=\"ddz_recorder.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "14 Запись ДДЗ",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 34
+          },
+          "id": 11,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-01.*\", unit=\"signalEstimation.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "18 Управление оценкой параметров сигналов",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 34
+          },
+          "id": 12,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-01.*\", unit=\"signalsNKICalculation.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "19. Расчет параметров оцениваемого сигнала",
+          "type": "logs"
+        }
+      ],
+      "title": "Сервер УПНКИ-01",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 18
+      },
+      "id": 17,
+      "panels": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 139
+          },
+          "id": 19,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-02.*\", unit=\"ac_receiver_L.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "13 Захват сигнала с АЦП",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 139
+          },
+          "id": 20,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-02.*\", unit=\"ac_receiver_S.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "13 Захват сигнала с АЦП",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 195
+          },
+          "id": 21,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-02.*\", unit=\"ac_receiver_X.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "13 Захват сигнала с АЦП",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 195
+          },
+          "id": 22,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-02.*\", unit=\"fft_L.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "11 Формирование блоков спектра",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 203
+          },
+          "id": 23,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-02.*\", unit=\"fft_S.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "11 Формирование блоков спектра",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 203
+          },
+          "id": 24,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-02.*\", unit=\"fft_X.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "11 Формирование блоков спектра",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 211
+          },
+          "id": 27,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-02.*\", unit=\"spectrumSignalDetection_L.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "12 Выделение сигналов в спектре",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 211
+          },
+          "id": 28,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-02.*\", unit=\"spectrumSignalDetection_S.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "12 Выделение сигналов в спектре",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 219
+          },
+          "id": 29,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-02.*\", unit=\"spectrumSignalDetection_X.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "12 Выделение сигналов в спектре",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 219
+          },
+          "id": 30,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-02.*\", unit=\"ddz_recorder_L.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "14 Запись ДДЗ",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 227
+          },
+          "id": 31,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-02.*\", unit=\"ddz_recorder_S.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "14 Запись ДДЗ",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 227
+          },
+          "id": 32,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"upnki-02.*\", unit=\"ddz_recorder_X.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "14 Запись ДДЗ",
+          "type": "logs"
+        }
+      ],
+      "title": "СЕРВЕР УПНКИ-02",
+      "type": "row"
+    },
+    {
+      "collapsed": true,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 19
+      },
+      "id": 14,
+      "panels": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 140
+          },
+          "id": 33,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"bsn1.*\", unit=\"DR.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "8 Формирование ЦУ сопровождения",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 140
+          },
+          "id": 34,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"bsn1.*\", unit=\"emuSDR.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": " 9 Имитатор РПУ сопровождения",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 148
+          },
+          "id": 35,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"bsn1.*\", unit=\"emitatorOPU.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "4 Имитатор ОПУ",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 12,
+            "y": 148
+          },
+          "id": 36,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"bsn1.*\", unit=\"OPY_Control.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "3 Управление ОПУ",
+          "type": "logs"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "fieldConfig": {
+            "defaults": {},
+            "overrides": []
+          },
+          "gridPos": {
+            "h": 8,
+            "w": 12,
+            "x": 0,
+            "y": 156
+          },
+          "id": 37,
+          "options": {
+            "dedupStrategy": "none",
+            "enableInfiniteScrolling": false,
+            "enableLogDetails": false,
+            "prettifyLogMessage": false,
+            "showCommonLabels": false,
+            "showLabels": false,
+            "showTime": false,
+            "sortOrder": "Descending",
+            "wrapLogMessage": false
+          },
+          "pluginVersion": "11.5.1",
+          "targets": [
+            {
+              "datasource": {
+                "type": "loki",
+                "uid": "P8E80F9AEF21F6940"
+              },
+              "direction": "backward",
+              "editorMode": "code",
+              "expr": "{nodename=~\"bsn1.*\", unit=\"TrajectoryPrediction.service\", contour=\"$contour\"} |= ``",
+              "queryType": "range",
+              "refId": "A"
+            }
+          ],
+          "title": "2 ЦУ задачи",
+          "type": "logs"
+        }
+      ],
+      "title": "Сервер БСН-01",
+      "type": "row"
+    }
+  ],
+  "preload": false,
+  "refresh": "10s",
+  "schemaVersion": 40,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {
+          "text": "PROD",
+          "value": "PROD"
+        },
+        "datasource": {
+          "type": "loki",
+          "uid": "P8E80F9AEF21F6940"
+        },
+        "definition": "",
+        "description": "",
+        "label": "Contour",
+        "name": "contour",
+        "options": [],
+        "query": {
+          "label": "contour",
+          "refId": "LokiVariableQueryEditor-VariableQuery",
+          "stream": "",
+          "type": 1
+        },
+        "refresh": 1,
+        "regex": "",
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-30m",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "browser",
+  "title": "ЛОГИ ВСЕХ МИКРОСЕРВИСОВ",
+  "uid": "deak69rnbhp1cc",
+  "version": 11,
+  "weekStart": ""
+}
