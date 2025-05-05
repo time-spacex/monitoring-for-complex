@@ -129,35 +129,44 @@ scrape_configs:
 
   - job_name: 'ipmi_exporter'
     scrape_interval: 15s
-    static_configs:
-      - targets: ['upnki-01-prod:9290']
-        labels:
-          ipmi_target: '172.18.70.101'
-      - targets: ['upnki-02-prod:9290']
-        labels:
-          ipmi_target: '172.18.70.102'
-      - targets: ['server-db-prod:9290']
-        labels:
-          ipmi_target: '172.18.70.103'
-      - targets: ['management-server-prod:9290']
-        labels:
-          ipmi_target: '172.18.70.104'
-      - targets: ['storage-server-prod:9290']
-        labels:
-          ipmi_target: '172.18.70.105'
-      - targets: ['bsn1-prod:9290']
-        labels:
-          ipmi_target: '172.18.70.107'
-      - targets: ['bsn2-prod:9290']
-        labels:
-          ipmi_target: '172.18.70.108'
     metrics_path: /ipmi
-    params:
-      target: 
-        - '172.18.70.101'
-        - '172.18.70.102'
-        - '172.18.70.103'
-        - '172.18.70.104'
-        - '172.18.70.105'
-        - '172.18.70.107'
-        - '172.18.70.108'
+    static_configs:
+      - targets:
+          - 'upnki-01-prod:9290'
+          - 'upnki-02-prod:9290'
+          - 'server-db-prod:9290'
+          - 'management-server-prod:9290'
+          - 'storage-server-prod:9290'
+          - 'bsn1-prod:9290'
+          - 'bsn2-prod:9290'
+        labels:
+          ipmi_target: 'dummy'
+    relabel_configs:
+      - source_labels: [__address__]
+        regex: upnki-01-prod:9290
+        target_label: __param_target
+        replacement: 172.18.70.101
+      - source_labels: [__address__]
+        regex: upnki-02-prod:9290
+        target_label: __param_target
+        replacement: 172.18.70.102
+      - source_labels: [__address__]
+        regex: server-db-prod:9290
+        target_label: __param_target
+        replacement: 172.18.70.103
+      - source_labels: [__address__]
+        regex: management-server-prod:9290
+        target_label: __param_target
+        replacement: 172.18.70.104
+      - source_labels: [__address__]
+        regex: storage-server-prod:9290
+        target_label: __param_target
+        replacement: 172.18.70.105
+      - source_labels: [__address__]
+        regex: bsn1-prod:9290
+        target_label: __param_target
+        replacement: 172.18.70.107
+      - source_labels: [__address__]
+        regex: bsn2-prod:9290
+        target_label: __param_target
+        replacement: 172.18.70.108
