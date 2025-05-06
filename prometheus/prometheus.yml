@@ -100,7 +100,6 @@ scrape_configs:
         labels:
           contour: 'PROD'
 
-
   - job_name: 'postgres_exporter'
     scrape_interval: 15s
     static_configs:
@@ -111,6 +110,19 @@ scrape_configs:
         labels:
           contour: 'prePROD'
       - targets: ['server-db-prod:9187']
+        labels:
+          contour: 'PROD'
+
+  - job_name: 'sql_exporter'
+    scrape_interval: 15s
+    static_configs:
+      - targets: ['server-db-dev-2:9399']
+        labels:
+          contour: 'DEV 2'
+      - targets: ['server-db-prePROD:9399']
+        labels:
+          contour: 'prePROD'
+      - targets: ['server-db-prod:9399']
         labels:
           contour: 'PROD'
 
