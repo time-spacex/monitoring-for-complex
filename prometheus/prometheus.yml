@@ -126,6 +126,7 @@ scrape_configs:
           - 'storage-server-prod:9290'
           - 'bsn1-prod:9290'
           - 'bsn2-prod:9290'
+          - 'zip-server-prod:9290'
     relabel_configs:
       # Устанавливаем параметр ?target=... в HTTP запросе
       - source_labels: [__address__]
@@ -163,6 +164,11 @@ scrape_configs:
         target_label: __param_target
         replacement: 172.18.70.108
 
+      - source_labels: [__address__]
+        regex: zip-server-prod:9290
+        target_label: __param_target
+        replacement: 172.18.70.101
+
       # Устанавливаем метку ipmi_target (для отображения в Grafana)
       - source_labels: [__param_target]
         target_label: ipmi_target
@@ -171,3 +177,4 @@ scrape_configs:
       - target_label: instance
         replacement: $1
         source_labels: [__address__]
+
