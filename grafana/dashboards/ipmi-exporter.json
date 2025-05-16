@@ -24,7 +24,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 7,
+  "id": 6,
   "links": [],
   "panels": [
     {
@@ -471,19 +471,14 @@
             {
               "options": {
                 "0": {
+                  "color": "semi-dark-red",
+                  "index": 1,
+                  "text": "Power off"
+                },
+                "1": {
                   "color": "green",
                   "index": 0,
                   "text": "Normal"
-                },
-                "1": {
-                  "color": "yellow",
-                  "index": 1,
-                  "text": "Warning"
-                },
-                "2": {
-                  "color": "semi-dark-red",
-                  "index": 2,
-                  "text": "Critical"
                 }
               },
               "type": "value"
@@ -533,10 +528,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "ipmi_power_state{instance=\"$instance\"}",
+          "expr": "ipmi_chassis_power_state{instance=\"$instance\"}",
           "interval": "",
           "legendFormat": "{{name}}",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -597,10 +594,12 @@
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
+          "editorMode": "code",
           "exemplar": true,
-          "expr": "ipmi_power_watts{instance=\"$instance\"}",
+          "expr": "ipmi_dcmi_power_consumption_watts{instance=\"$instance\"}",
           "interval": "",
           "legendFormat": "{{name}}",
+          "range": true,
           "refId": "A"
         }
       ],
@@ -1131,6 +1130,6 @@
   "timezone": "",
   "title": "IPMI Exporter",
   "uid": "UKjaSZf7z",
-  "version": 3,
+  "version": 2,
   "weekStart": ""
 }
