@@ -18,6 +18,11 @@ services:
     image: grafana/loki
     volumes:
       - ./loki/config.yml:/etc/loki/config.yml
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "3"
     ports:
       - "3100:3100"
     command: -config.file=/etc/loki/config.yml
