@@ -18,7 +18,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 5,
+  "id": 6,
   "links": [],
   "panels": [
     {
@@ -31,7 +31,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 29,
+        "h": 20,
         "w": 24,
         "x": 0,
         "y": 0
@@ -48,7 +48,7 @@
         "sortOrder": "Descending",
         "wrapLogMessage": false
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -57,12 +57,100 @@
           },
           "direction": "backward",
           "editorMode": "code",
-          "expr": "{nodename=~\"management-server.*\", unit=\"guidance-conveyor.service\", contour=\"$contour\"} |= ``",
+          "expr": "{nodename=~\"management-server.*\", unit=\"conveyor_generic.service\", contour=\"$contour\"} |= ``",
           "queryType": "range",
           "refId": "A"
         }
       ],
-      "title": "Panel Title",
+      "title": "GENERIC CONVEYOR",
+      "type": "logs"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "P8E80F9AEF21F6940"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 20,
+        "w": 24,
+        "x": 0,
+        "y": 20
+      },
+      "id": 2,
+      "options": {
+        "dedupStrategy": "none",
+        "enableInfiniteScrolling": false,
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": false,
+        "showTime": false,
+        "sortOrder": "Descending",
+        "wrapLogMessage": false
+      },
+      "pluginVersion": "11.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "direction": "backward",
+          "editorMode": "code",
+          "expr": "{nodename=~\"management-server.*\", unit=\"conveyor_pk1.service\", contour=\"$contour\"} |= ``",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "PK1 CONVEYOR",
+      "type": "logs"
+    },
+    {
+      "datasource": {
+        "type": "loki",
+        "uid": "P8E80F9AEF21F6940"
+      },
+      "fieldConfig": {
+        "defaults": {},
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 20,
+        "w": 24,
+        "x": 0,
+        "y": 40
+      },
+      "id": 3,
+      "options": {
+        "dedupStrategy": "none",
+        "enableInfiniteScrolling": false,
+        "enableLogDetails": true,
+        "prettifyLogMessage": false,
+        "showCommonLabels": false,
+        "showLabels": false,
+        "showTime": false,
+        "sortOrder": "Descending",
+        "wrapLogMessage": false
+      },
+      "pluginVersion": "11.4.0",
+      "targets": [
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "direction": "backward",
+          "editorMode": "code",
+          "expr": "{nodename=~\"management-server.*\", unit=\"conveyor_pk2.service\", contour=\"$contour\"} |= ``",
+          "queryType": "range",
+          "refId": "A"
+        }
+      ],
+      "title": "PK2 CONVEYOR",
       "type": "logs"
     }
   ],
@@ -73,8 +161,8 @@
     "list": [
       {
         "current": {
-          "text": "prePROD",
-          "value": "prePROD"
+          "text": "DEV 2",
+          "value": "DEV 2"
         },
         "datasource": {
           "type": "loki",
@@ -97,13 +185,13 @@
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-3h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "Логи конвейера",
   "uid": "ae7l3fkdmmi9sf",
-  "version": 7,
+  "version": 2,
   "weekStart": ""
 }
