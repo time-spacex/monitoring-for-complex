@@ -31,7 +31,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 20,
+        "h": 8,
         "w": 24,
         "x": 0,
         "y": 0
@@ -75,10 +75,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 20,
+        "h": 12,
         "w": 24,
         "x": 0,
-        "y": 20
+        "y": 8
       },
       "id": 2,
       "options": {
@@ -104,6 +104,16 @@
           "expr": "{nodename=~\"management-server.*\", unit=\"conveyor_pk1.service\", contour=\"$contour\"} |= ``",
           "queryType": "range",
           "refId": "A"
+        },
+        {
+          "datasource": {
+            "type": "loki",
+            "uid": "P8E80F9AEF21F6940"
+          },
+          "expr": "",
+          "hide": false,
+          "queryType": "range",
+          "refId": "B"
         }
       ],
       "title": "PK1 CONVEYOR",
@@ -119,10 +129,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 20,
+        "h": 13,
         "w": 24,
         "x": 0,
-        "y": 40
+        "y": 20
       },
       "id": 3,
       "options": {
@@ -155,14 +165,15 @@
     }
   ],
   "preload": false,
+  "refresh": "5s",
   "schemaVersion": 40,
   "tags": [],
   "templating": {
     "list": [
       {
         "current": {
-          "text": "DEV 2",
-          "value": "DEV 2"
+          "text": "PROD",
+          "value": "PROD"
         },
         "datasource": {
           "type": "loki",
@@ -185,13 +196,13 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-6h",
     "to": "now"
   },
   "timepicker": {},
   "timezone": "browser",
   "title": "Логи конвейера",
   "uid": "ae7l3fkdmmi9sf",
-  "version": 2,
+  "version": 4,
   "weekStart": ""
 }
