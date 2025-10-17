@@ -6,10 +6,11 @@ volumes:
 services:
 
   prometheus:
-    image: bitnami/prometheus
+    image: prom/prometheus
     volumes:
       - prometheus_data:/prometheus
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - /etc/prometheus/ipmi_targets.yml:/etc/prometheus/ipmi_targets.yml
       - /etc/hosts:/etc/hosts
     ports:
       - "9090:9090"
