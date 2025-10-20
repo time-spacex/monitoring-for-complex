@@ -182,3 +182,10 @@ scrape_configs:
     # Используем label "module" из targets.yml как параметр запроса
     - source_labels: [module]
       target_label: __param_module
+
+
+  - job_name: 'gitlab-ci-pipelines-exporter'
+    scrape_interval: 10s
+    scrape_timeout: 5s
+    static_configs:
+      - targets: ['gitlab-ci-pipelines-exporter:8080']
