@@ -2,11 +2,22 @@ volumes:
   grafana_data:
   prometheus_data:
 
+networks:
+  mynet1:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.28.0.0/16
+          ip_range: 172.28.5.0/24
+          gateway: 172.28.5.254
+
 
 services:
 
   prometheus:
     image: prom/prometheus
+    networks:
+      - mynet1
     volumes:
       - prometheus_data:/prometheus
       - ./prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
@@ -17,6 +28,8 @@ services:
 
   loki:
     image: grafana/loki
+    networks:
+      - mynet1
     volumes:
       - ./loki/config.yml:/etc/loki/config.yml
     logging:
@@ -30,6 +43,8 @@ services:
 
   grafana:
     image: grafana/grafana
+    networks:
+      - mynet1
     depends_on:
       - prometheus
     volumes:
@@ -43,10 +58,11 @@ services:
 
   gitlab-ci-pipelines-exporter:
     image: mvisonneau/gitlab-ci-pipelines-exporter
+    networks:
+      - mynet1
     volumes:
       - ./gitlab-ci-pipelines-exporter/config.yml:/etc/config.yml
     env_file: .env
     ports:
       - "8080:8080"
     command: run --config /etc/config.yml
-    
