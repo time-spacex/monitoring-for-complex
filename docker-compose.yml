@@ -48,4 +48,3 @@ services:
     env_file: .env
     ports:
       - "8080:8080"
-    command: -config /etc/config.yml
