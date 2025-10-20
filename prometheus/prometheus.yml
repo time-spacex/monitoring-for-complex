@@ -99,6 +99,8 @@ scrape_configs:
         - 'rmo-processing-prod:9100'
         - 'rmo-pk1-prod:9100'
         - 'rmo-pk2-prod:9100'
+        - 'zip-pk2-bsn2-prod:9100'
+        - 'BUA-XY:9100'
         labels:
           contour: 'PROD'
 
