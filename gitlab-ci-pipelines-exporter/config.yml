@@ -8,7 +8,7 @@ gitlab:
 #   - name: bar/project
 wildcards:
   - owner:
-      name: v2reactivestreams
+      name: krtm2/v2reactivestreams
       kind: group
       include_subgroups: true
     archived: false
