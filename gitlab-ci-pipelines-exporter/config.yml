@@ -8,8 +8,8 @@ gitlab:
 #   - name: bar/project
 wildcards:
   - owner:
-      name: api-token-mainteiner
-      kind: user
+      name: v2reactivestreams
+      kind: group
       include_subgroups: true
     archived: false
     pull:
