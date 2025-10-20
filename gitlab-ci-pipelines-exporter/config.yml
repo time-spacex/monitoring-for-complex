@@ -2,7 +2,7 @@ gitlab:
   url: https://git.okn-m.anc.space
   # You can also configure the token using --gitlab-token
   # or the $GCPE_GITLAB_TOKEN environment variable
-  token: ${GITLAB_GROUP_TOKEN}
+#  token: ${GCPE_GITLAB_TOKEN}
 # projects:
 #   - name: foo/project
 #   - name: bar/project
