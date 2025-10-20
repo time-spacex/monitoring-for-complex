@@ -40,3 +40,12 @@ services:
       - /etc/hosts:/etc/hosts
     ports:
       - "3000:3000"
+
+  gitlab-ci-pipelines-exporter:
+    image: mvisonneau/gitlab-ci-pipelines-exporter
+    volumes:
+      - ./gitlab-ci-pipelines-exporter/config.yml:/etc/config.yml
+    env_file: .env
+    ports:
+      - "8080:8080"
+    command: --config /etc/config.yml
