@@ -877,7 +877,7 @@
         "sortBy": [
           {
             "desc": true,
-            "displayName": "Date"
+            "displayName": "ID"
           }
         ]
       },
@@ -1285,7 +1285,12 @@
           "show": false
         },
         "showHeader": true,
-        "sortBy": []
+        "sortBy": [
+          {
+            "desc": true,
+            "displayName": "ID"
+          }
+        ]
       },
       "pluginVersion": "11.4.0",
       "targets": [
@@ -1403,20 +1408,24 @@
     "list": [
       {
         "current": {
-          "text": "git.okn-m.anc.space",
-          "value": "git.okn-m.anc.space"
+          "text": "git.okn-m.anc.space/krtm2/v2reactivestreams",
+          "value": "git.okn-m.anc.space/krtm2/v2reactivestreams"
         },
         "hide": 2,
         "name": "GITLAB_HOST",
-        "query": "git.okn-m.anc.space",
+        "query": "git.okn-m.anc.space/krtm2/v2reactivestreams",
         "skipUrlSync": true,
         "type": "constant"
       },
       {
         "allValue": ".*",
         "current": {
-          "text": "All",
-          "value": "$__all"
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": {
           "type": "prometheus",
@@ -1437,7 +1446,9 @@
         "allValue": ".*",
         "current": {
           "text": "All",
-          "value": "$__all"
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": {
           "type": "prometheus",
@@ -1459,7 +1470,9 @@
         "allValue": ".*",
         "current": {
           "text": "All",
-          "value": "$__all"
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": {
           "type": "prometheus",
@@ -1499,6 +1512,6 @@
   "timezone": "",
   "title": "GitLab CI pipelines",
   "uid": "gitlab_ci_pipelines",
-  "version": 2,
+  "version": 3,
   "weekStart": ""
 }
