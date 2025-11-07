@@ -100,6 +100,8 @@ scrape_configs:
         labels:
           contour: 'PROD'
 
+# Database exporters
+
   - job_name: 'postgres_exporter'
     scrape_interval: 15s
     static_configs:
@@ -126,6 +128,8 @@ scrape_configs:
         labels:
           contour: 'PROD'
 
+# ----------------
+
   - job_name: 'ipmi_exporter'
     scrape_interval: 15s
     metrics_path: /ipmi
@@ -138,42 +142,48 @@ scrape_configs:
           - 'storage-server-prod:9290'
           - 'bsn1-prod:9290'
           - 'bsn2-prod:9290'
+          - 'zip-server-prod:9290'
     relabel_configs:
       # Устанавливаем параметр ?target=... в HTTP запросе
       - source_labels: [__address__]
         regex: upnki-01-prod:9290
         target_label: __param_target
-        replacement: 172.18.70.101
+        replacement: 10.80.32.101
 
       - source_labels: [__address__]
         regex: upnki-02-prod:9290
         target_label: __param_target
-        replacement: 172.18.70.102
+        replacement: 10.80.32.102
 
       - source_labels: [__address__]
         regex: server-db-prod:9290
         target_label: __param_target
-        replacement: 172.18.70.103
+        replacement: 10.80.32.103
 
       - source_labels: [__address__]
         regex: management-server-prod:9290
         target_label: __param_target
-        replacement: 172.18.70.104
+        replacement: 10.80.32.104
 
       - source_labels: [__address__]
         regex: storage-server-prod:9290 
         target_label: __param_target
-        replacement: 172.18.70.105
+        replacement: 10.80.32.105
 
       - source_labels: [__address__]
         regex: bsn1-prod:9290
         target_label: __param_target
-        replacement: 172.18.70.107
+        replacement: 10.80.32.107
 
       - source_labels: [__address__]
         regex: bsn2-prod:9290
         target_label: __param_target
-        replacement: 172.18.70.108
+        replacement: 10.80.32.108
+
+      - source_labels: [__address__]
+        regex: zip-server-prod:9290
+        target_label: __param_target
+        replacement: 172.18.70.101
 
       # Устанавливаем метку ipmi_target (для отображения в Grafana)
       - source_labels: [__param_target]
@@ -183,3 +193,4 @@ scrape_configs:
       - target_label: instance
         replacement: $1
         source_labels: [__address__]
+
