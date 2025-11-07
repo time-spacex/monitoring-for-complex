@@ -1,0 +1,126 @@
+gitlab:
+  url: https://git.okn-m.anc.space
+  # You can also configure the token using --gitlab-token
+  # or the $GCPE_GITLAB_TOKEN environment variable
+#  token: ${GCPE_GITLAB_TOKEN}
+# projects:
+#   - name: foo/project
+#   - name: bar/project
+wildcards:
+  - owner:
+      name: krtm2/v2reactivestreams
+      kind: group
+      include_subgroups: true
+    archived: false
+    pull:
+      environments:
+        # Whether or not to pull project environments & their deployments
+        # (optional, default: false)
+        enabled: false
+
+        # Filter out by name environments to include
+        # (optional, default: ".*")
+        regexp: ".*"
+
+        # Do not export metrics for stopped environments
+        # (optional, default: true)
+        exclude_stopped: true
+
+      refs:
+        branches:
+          # Monitor pipelines related to project branches 
+          # (optional, default: true)
+          enabled: true
+
+          # Filter for branches to include
+          # (optional, default: "^(?:main|master)$" -- main/master branches)
+          regexp: "^(?:develop|prePROD|PROD)$"
+          
+          # Only keep most 'n' recently updated branches
+          # (optional, default: 0 -- disabled/keep every branch matching the regexp)"
+          most_recent: 0
+
+          # If the age of the most recently updated pipeline for the branch is greater than
+          # this value, the pipeline metrics won't get exported (optional, default: 0 (disabled))
+          max_age_seconds: 0
+
+          # If set to false, it will continue to export metrics for the branch even
+          # if it has been deleted (optional, default: true)
+          exclude_deleted: true
+
+        tags:
+          # Monitor pipelines related to project tags
+          # (optional, default: true)
+          enabled: false
+
+          # Filter for tags to include
+          # (optional, default: ".*" -- all tags)
+          regexp: ".*"
+
+          # Only keep most 'n' recently updated tags
+          # (optional, default: 0 -- disabled/keep every tag matching the regexp)"
+          most_recent: 0
+
+          # If the age of the most recently updated pipeline for the tag is greater than
+          # this value, the pipeline metrics won't get exported (optional, default: 0 (disabled))
+          max_age_seconds: 0
+
+          # If set to false, it will continue to export metrics for the tag even
+          # if it has been deleted (optional, default: true)
+          exclude_deleted: true
+
+        merge_requests:
+          # Monitor pipelines related to project merge requests
+          # (optional, default: false)
+          enabled: false
+
+          # Only keep most 'n' recently updated merge requests
+          # (optional, default: 0 -- disabled/keep every merge request)
+          most_recent: 0
+
+          # If the age of the most recently updated pipeline for the merge request is greater than
+          # this value, the pipeline metrics won't get exported (optional, default: 0 (disabled))
+          max_age_seconds: 0
+
+      pipeline:
+        jobs:
+          # Whether to attempt retrieving job level metrics from pipelines.
+          # Increases the number of outputed metrics significantly!
+          # (optional, default: false)
+          enabled: false
+
+          from_child_pipelines:
+            # Collect jobs from subsequent child/downstream pipelines
+            # (optional, default: true)
+            enabled: true
+
+          runner_description:
+            # Export the description of the runner which ran the job
+            # (optional, default: true)
+            enabled: true
+
+            # Whenever the description of a runner will match this regexp
+            # The regexp will be used as the value of the runner description instead
+            # (optional, default: "shared-runners-manager-(\d*)\.gitlab\.com")
+            aggregation_regexp: shared-runners-manager-(\d*)\.gitlab\.com
+
+        variables:
+          # Fetch pipeline variables in a separate metric (optional, default: false)
+          enabled: false
+
+          # Filter pipelines variables to include
+          # (optional, default: ".*", all variables)
+          regexp: ".*"
+          
+        test_reports:
+          # Fetch test reports in a separate metric (optiona, default: false)
+          enabled: false
+          
+          from_child_pipelines:
+            # Combines test reports from subsequent child/downstream pipelines
+            # (optional, default: false)
+            enabled: false
+
+          test_cases:
+          # Fetch test cases reports in a separate metric (optional, default: false)
+            enabled: false
