@@ -1,6 +1,8 @@
 global:
   scrape_interval:     15s 
   evaluation_interval: 15s
+  external_labels:
+    instance: prometheus-local
 
 scrape_configs:
 
@@ -43,9 +45,9 @@ scrape_configs:
         - 'server-db-prod:9558'
         - 'management-server-prod:9558'
         - 'storage-server-prod:9558'
-        - 'bsn3-prod:9558'
-        - 'bsn1-prod:9558'
-        - 'bsn2-prod:9558'
+        - 'pk2-bsn2-prod:9558'
+        - 'pk1-bsn1-prod:9558'
+        - 'pk2-bsn1-prod:9558'
         - 'rmo-processing-prod:9558'
         - 'rmo-pk1-prod:9558'
         - 'rmo-pk2-prod:9558'
@@ -91,12 +93,14 @@ scrape_configs:
         - 'server-db-prod:9100'
         - 'management-server-prod:9100'
         - 'storage-server-prod:9100'
-        - 'bsn3-prod:9100'
-        - 'bsn1-prod:9100'
-        - 'bsn2-prod:9100'
+        - 'pk2-bsn2-prod:9100'
+        - 'pk1-bsn1-prod:9100'
+        - 'pk2-bsn1-prod:9100'
         - 'rmo-processing-prod:9100'
         - 'rmo-pk1-prod:9100'
         - 'rmo-pk2-prod:9100'
+        - 'zip-pk2-bsn2-prod:9100'
+        - 'BUA-XY:9100'
         labels:
           contour: 'PROD'
 
@@ -130,67 +134,30 @@ scrape_configs:
 
 # ----------------
 
-  - job_name: 'ipmi_exporter'
-    scrape_interval: 15s
+
+  - job_name: ipmi_exporter
+    scrape_interval: 1m
+    scrape_timeout: 30s
     metrics_path: /ipmi
-    static_configs:
-      - targets:
-          - 'upnki-01-prod:9290'
-          - 'upnki-02-prod:9290'
-          - 'server-db-prod:9290'
-          - 'management-server-prod:9290'
-          - 'storage-server-prod:9290'
-          - 'bsn1-prod:9290'
-          - 'bsn2-prod:9290'
-          - 'zip-server-prod:9290'
+    scheme: http
+    file_sd_configs:
+    - files:
+      - /etc/prometheus/ipmi_targets.yml
+      refresh_interval: 5m
     relabel_configs:
-      # Устанавливаем параметр ?target=... в HTTP запросе
-      - source_labels: [__address__]
-        regex: upnki-01-prod:9290
-        target_label: __param_target
-        replacement: 10.80.32.101
+    # Берём адрес цели и передаём его в параметр target
+    - source_labels: [__address__]
+      regex: (.*)
+      target_label: __param_target
 
-      - source_labels: [__address__]
-        regex: upnki-02-prod:9290
-        target_label: __param_target
-        replacement: 10.80.32.102
+    # Делаем instance равным адресу цели
+    - source_labels: [__param_target]
+      target_label: instance
 
-      - source_labels: [__address__]
-        regex: server-db-prod:9290
-        target_label: __param_target
-        replacement: 10.80.32.103
+    # Подставляем адрес ipmi_exporter контейнера
+    - target_label: __address__
+      replacement: 172.17.0.1:9290
 
-      - source_labels: [__address__]
-        regex: management-server-prod:9290
-        target_label: __param_target
-        replacement: 10.80.32.104
-
-      - source_labels: [__address__]
-        regex: storage-server-prod:9290 
-        target_label: __param_target
-        replacement: 10.80.32.105
-
-      - source_labels: [__address__]
-        regex: bsn1-prod:9290
-        target_label: __param_target
-        replacement: 10.80.32.107
-
-      - source_labels: [__address__]
-        regex: bsn2-prod:9290
-        target_label: __param_target
-        replacement: 10.80.32.108
-
-      - source_labels: [__address__]
-        regex: zip-server-prod:9290
-        target_label: __param_target
-        replacement: 172.18.70.101
-
-      # Устанавливаем метку ipmi_target (для отображения в Grafana)
-      - source_labels: [__param_target]
-        target_label: ipmi_target
-
-      # Настройка instance (в Grafana отображается как источник метрик)
-      - target_label: instance
-        replacement: $1
-        source_labels: [__address__]
-
+    # Используем label "module" из targets.yml как параметр запроса
+    - source_labels: [module]
+      target_label: __param_module
