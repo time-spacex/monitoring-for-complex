@@ -127,7 +127,7 @@
         "text": {},
         "valueMode": "color"
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -251,7 +251,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -341,7 +341,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -421,7 +421,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -527,7 +527,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -615,7 +615,7 @@
         "showThresholdMarkers": true,
         "sizing": "auto"
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -700,7 +700,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -784,7 +784,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -873,7 +873,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -960,7 +960,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1045,7 +1045,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1269,7 +1269,7 @@
           "sort": "desc"
         }
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1816,7 +1816,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -2325,7 +2325,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -2440,7 +2440,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -23610,6 +23610,6 @@
   "timezone": "browser",
   "title": "Состояние виртуальных машин комплекса",
   "uid": "rYdddlPWk",
-  "version": 6,
+  "version": 1,
   "weekStart": ""
 }

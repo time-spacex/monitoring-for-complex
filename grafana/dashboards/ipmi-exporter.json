@@ -4,8 +4,7 @@
       {
         "builtIn": 1,
         "datasource": {
-          "type": "datasource",
-          "uid": "grafana"
+          "uid": "-- Grafana --"
         },
         "enable": true,
         "hide": true,
@@ -24,7 +23,7 @@
   "editable": true,
   "fiscalYearStartMonth": 0,
   "graphTooltip": 0,
-  "id": 6,
+  "id": 8,
   "links": [],
   "panels": [
     {
@@ -91,24 +90,20 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "disableTextWrap": false,
           "editorMode": "builder",
           "exemplar": true,
           "expr": "ipmi_chassis_power_state{instance=\"$instance\"}",
-          "fullMetaSearch": false,
-          "includeNullMetadata": true,
           "instant": false,
           "interval": "",
           "legendFormat": "{{instance}}",
-          "refId": "A",
-          "useBackend": false
+          "refId": "A"
         }
       ],
       "title": "Power Status",
@@ -168,26 +163,22 @@
         },
         "showHeader": true
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
             "type": "prometheus",
             "uid": "PBFA97CFB590B2093"
           },
-          "disableTextWrap": false,
           "editorMode": "builder",
           "exemplar": true,
           "expr": "ipmi_bmc_info{instance=\"$instance\"}",
           "format": "table",
-          "fullMetaSearch": false,
-          "includeNullMetadata": true,
           "instant": true,
           "interval": "",
           "legendFormat": "",
           "queryType": "randomWalk",
-          "refId": "A",
-          "useBackend": false
+          "refId": "A"
         }
       ],
       "title": "Machine Info",
@@ -278,7 +269,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -341,7 +332,7 @@
         "sizing": "auto",
         "text": {}
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -421,7 +412,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 12,
         "x": 0,
         "y": 9
@@ -440,7 +431,7 @@
           "sort": "none"
         }
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -497,7 +488,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 4,
         "x": 12,
         "y": 9
@@ -521,7 +512,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -565,7 +556,7 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 8,
         "x": 16,
         "y": 9
@@ -587,7 +578,7 @@
         "sizing": "auto",
         "text": {}
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -685,7 +676,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 13
+        "y": 14
       },
       "id": 14,
       "options": {
@@ -700,7 +691,7 @@
         },
         "showHeader": true
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -808,7 +799,7 @@
         "h": 8,
         "w": 6,
         "x": 12,
-        "y": 13
+        "y": 14
       },
       "id": 17,
       "options": {
@@ -823,7 +814,7 @@
         },
         "showHeader": true
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -889,7 +880,7 @@
         "h": 8,
         "w": 6,
         "x": 18,
-        "y": 13
+        "y": 14
       },
       "id": 16,
       "options": {
@@ -908,7 +899,7 @@
         "sizing": "auto",
         "text": {}
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -973,7 +964,7 @@
         "h": 3,
         "w": 24,
         "x": 0,
-        "y": 21
+        "y": 22
       },
       "id": 18,
       "options": {
@@ -994,7 +985,7 @@
         "textMode": "auto",
         "wideLayout": true
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1039,7 +1030,7 @@
         "h": 5,
         "w": 24,
         "x": 0,
-        "y": 24
+        "y": 25
       },
       "id": 19,
       "options": {
@@ -1058,7 +1049,7 @@
         "sizing": "auto",
         "text": {}
       },
-      "pluginVersion": "11.5.1",
+      "pluginVersion": "11.4.0",
       "targets": [
         {
           "datasource": {
@@ -1084,36 +1075,21 @@
     "list": [
       {
         "current": {
-          "text": "ipmi_exporter",
-          "value": "ipmi_exporter"
+          "text": "management-server-prod-KVM",
+          "value": "management-server-prod-KVM"
         },
-        "definition": "label_values(job)",
-        "label": "job",
-        "name": "Job",
-        "options": [],
-        "query": {
-          "qryType": 1,
-          "query": "label_values(job)",
-          "refId": "PrometheusVariableQueryEditor-VariableQuery"
+        "datasource": {
+          "type": "prometheus",
+          "uid": "PBFA97CFB590B2093"
         },
-        "refresh": 1,
-        "regex": "",
-        "type": "query"
-      },
-      {
-        "current": {
-          "text": "upnki-01-prod:9290",
-          "value": "upnki-01-prod:9290"
-        },
-        "datasource": "PBFA97CFB590B2093",
-        "definition": "label_values({job=\"$Job\"},instance)",
+        "definition": "label_values(ipmi_bmc_info,instance)",
         "includeAll": false,
         "label": "instance",
         "name": "instance",
         "options": [],
         "query": {
           "qryType": 1,
-          "query": "label_values({job=\"$Job\"},instance)",
+          "query": "label_values(ipmi_bmc_info,instance)",
           "refId": "PrometheusVariableQueryEditor-VariableQuery"
         },
         "refresh": 1,
@@ -1128,8 +1104,8 @@
   },
   "timepicker": {},
   "timezone": "",
-  "title": "IPMI Exporter",
+  "title": "IPMI Exporter final",
   "uid": "UKjaSZf7z",
-  "version": 2,
+  "version": 1,
   "weekStart": ""
 }
